@@ -17,8 +17,8 @@ afterEach(() => {
 context('Login', () => {
 
     it('Login com sucesso', () => {
-        const email = Cypress.env('EMAIL');
-        const password = Cypress.env('PASSWORD');
+        cy.get(element.input_email).type(Cypress.env('EMAIL'));
+        cy.get(element.input_password).type(Cypress.env('PASSWORD'));
         cy.Login(email, password);
     });
 
